@@ -1,0 +1,47 @@
+[project]
+name = "presentation-coach"
+version = "1.0.0"
+description = "AI Presentation Coach — FastAPI backend"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.115.6",
+    "uvicorn[standard]==0.34.0",
+    "pydantic==2.10.4",
+    "pydantic-settings==2.7.0",
+    "sqlalchemy==2.0.36",
+    "aiosqlite==0.20.0",
+    "python-multipart==0.0.20",
+    "httpx==0.28.1",
+    "litellm==1.56.4",
+    "faster-whisper==1.1.0",
+    "pydub==0.25.1",
+    "PyYAML==6.0.2",
+    "python-dotenv==1.0.1",
+    "aiofiles==24.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.3.4",
+    "pytest-asyncio==0.24.0",
+    "pytest-mock==3.14.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short --strict-markers"
+markers = [
+    "unit: Pure unit tests (no I/O)",
+    "functional: API-level functional tests",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest==8.3.4",
+    "pytest-asyncio==0.24.0",
+    "pytest-mock==3.14.0",
+]

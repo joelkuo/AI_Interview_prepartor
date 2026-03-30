@@ -1,0 +1,16 @@
+llm:
+  default_model: "anthropic/claude-sonnet-4-20250514"
+  models:
+    slide_analysis: "anthropic/claude-sonnet-4-20250514"
+    speech_analysis: "anthropic/claude-sonnet-4-20250514"
+    alignment_analysis: "anthropic/claude-sonnet-4-20250514"
+  fallback_model: "ollama/llama3"
+
+whisper:
+  model_size: "base"
+  device: "cpu"
+  compute_type: "int8"
+
+storage:
+  media_dir: "./data/media"
+  db_path: "./data/coach.db"
